@@ -57,7 +57,6 @@ const deleteVideogame = function () {
   })
     .then((response) => {
       if (response.ok) {
-        alert("ELIMINAZIONE AVVENUTA CON SUCCESSO");
         window.location.href = "./index.html";
       } else {
         throw new Error("Errore in fase di eliminazione");
@@ -69,15 +68,11 @@ const deleteVideogame = function () {
 };
 
 // Quando l'utente clicca sul bottone "ELIMINA" nella card, apri il modale
+const showModale = function () {
+  deleteModal.modal("show");
+};
 deleteTriggerButton.addEventListener("click", () => {
   deleteModal.show();
-});
-// Quando l'utente clicca sul bottone "Elimina" all'interno del modale, esegui deleteVideogame()
-confirmDeleteButton.addEventListener("click", () => {
-  // Prima di eliminare, nascondi il modale
-  deleteModal.hide();
-  // Esegui la funzione di eliminazione
-  deleteVideogame();
 });
 
 const editVideogame = function () {
